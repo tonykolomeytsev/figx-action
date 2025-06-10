@@ -1,6 +1,9 @@
 name: 'Figx Action'
 description: 'GitHub Action to run the figx CLI tool'
 author: 'Anton Kolomeytsev'
+branding:
+  icon: 'download-cloud'
+  color: 'purple'
 inputs:
   command:
     description: 'figx command to run'
