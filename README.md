@@ -13,6 +13,7 @@ jobs:
         with:
           command: import
           args: //ui/kit/...
+          token: ${{ secrets.FIGMA_PERSONAL_TOKEN }}
 ```
 
 | Name    | Description                    | Required |
