@@ -1,0 +1,12 @@
+name: Test Figx Action
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./ # use local action
+        with:
+          command: help

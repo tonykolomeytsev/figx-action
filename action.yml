@@ -1,0 +1,35 @@
+name: 'Figx Action'
+description: 'GitHub Action to run the figx CLI tool'
+author: 'Anton Kolomeytsev'
+inputs:
+  command:
+    description: 'figx command to run'
+    required: true
+  args:
+    description: 'Arguments for the figx command'
+    required: true
+  token:
+    description: 'Figma token (or other auth) if required'
+    required: false
+runs:
+  using: 'composite'
+  steps:
+    - name: Install figx
+      shell: bash
+      run: |
+        OS="$(uname)"
+        if [[ "$OS" == "Linux" ]]; then
+          curl -L "https://github.com/tonykolomeytsev/figx/releases/download/v0.5.0/figx-linux-gnu-x86_64.tar.gz" -o figx.tar.gz
+          tar -xzf figx.tar.gz
+          chmod +x figx
+          sudo mv figx /usr/local/bin/figx
+        else
+          echo "Unsupported OS: $OS"
+          exit 1
+        fi
+
+    - name: Run figx
+      shell: bash
+      run: |
+        figx ${{ inputs.command }} ${{ inputs.args }}
+
