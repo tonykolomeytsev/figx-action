@@ -22,7 +22,7 @@ runs:
       run: |
         OS="$(uname)"
         if [[ "$OS" == "Linux" ]]; then
-          curl -L "https://github.com/tonykolomeytsev/figx/releases/download/v0.6.0/figx-linux-gnu-x86_64.tar.gz" -o figx.tar.gz
+          curl -L "https://github.com/tonykolomeytsev/figx/releases/download/v0.6.1/figx-linux-gnu-x86_64.tar.gz" -o figx.tar.gz
           tar -xzf figx.tar.gz
           chmod +x figx
           sudo mv figx /usr/local/bin/figx
