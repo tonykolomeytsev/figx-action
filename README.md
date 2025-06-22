@@ -9,7 +9,7 @@ jobs:
   figx:
     runs-on: ubuntu-latest
     steps:
-      - uses: tonykolomeytsev/figx-action@v0.6
+      - uses: tonykolomeytsev/figx-action@v0.7
         with:
           command: import
           args: //ui/kit/...
